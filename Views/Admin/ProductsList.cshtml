@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PROJECT_2024.Models.Product>
+
+@{
+    ViewBag.Title = "Products List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products List</h2>
+
+<p>
+    @Html.ActionLink("Create New Product", "EnterProduct")
+</p>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Release Date</th>
+            <th>Age Limit</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.PId)</td>
+                <td>@Html.DisplayFor(modelItem => item.PName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.RelasDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.AgeLemt)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="@item.Image" alt="Product Image" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditProduct", new { id = item.PId }) |
+                    @Html.ActionLink("Details", "DetailsProduct", new { id = item.PId }) |
+                    @Html.ActionLink("Delete", "DeleteProduct", new { id = item.PId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

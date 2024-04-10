@@ -1,0 +1,41 @@
+﻿@model List<PROJECT_2024.Models.CartItem>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>Your Shopping Cart</h2>
+
+    @if (Model.Count == 0)
+    {
+        <p>Your shopping cart is empty.</p>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var CartItem in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="@Url.Content(CartItem.Product.Image)" class="card-img-top" a>
+                        <div class="card-body">
+                            <h5 class="card-title">Name: @CartItem.Product.PName</h5>
+                            <h5 class="card-title">Quantity: @CartItem.Quantity</h5>
+                            <p class="card-text">Price: $@CartItem.Price</p>
+                        </div>
+                        @Html.ActionLink("Remove", "RemoveFromCart", new { productId = CartItem.Product.PId }, new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
+            }
+        </div>
+
+    }
+        <div class="mt-4 text-right">
+            <button class="btn btn-primary">Checkout</button>
+        </div>
+    }
+</div>
+

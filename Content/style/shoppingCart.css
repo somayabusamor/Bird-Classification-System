@@ -1,0 +1,44 @@
+﻿/* cart.css */
+
+/* Styles for cards */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for card images */
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Styles for card body */
+.card-body {
+    padding: 15px;
+}
+
+/* Styles for card titles */
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Styles for card text */
+.card-text {
+    color: #555;
+}
+
+/* Styles for remove button */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }

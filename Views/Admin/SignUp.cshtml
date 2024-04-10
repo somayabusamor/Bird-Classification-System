@@ -1,0 +1,93 @@
+﻿@model PROJECT_2024.Models.Customer
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="~/Content/style/SignUp.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link href="~/Content/style/SignUp.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm("AddCustomer", "Admin", FormMethod.Post, new { autocomplete = "off", role = "main" }))
+        {
+
+            <div>
+                <div>
+                    <label class="label-email">
+                        @Html.TextBoxFor(m => m.CustomerID)
+                        <span class="required">Customer ID</span>
+                        @Html.ValidationMessageFor(x => x.CustomerID)
+                    </label>
+                </div>
+
+                <label class="label-name">
+                    @Html.TextBoxFor(m => m.Name)
+                    <span class="required">Name</span>
+                    @Html.ValidationMessageFor(x => x.Name)
+                </label>
+            </div>
+            <div>
+                <label class="label-email">
+                    @Html.TextBoxFor(m => m.Email)
+                    <span class="required">Email</span>
+                    @Html.ValidationMessageFor(x => x.Email)
+                </label>
+            </div>
+            <div>
+                <label class="label-password">
+                    @Html.TextBoxFor(m => m.Password)
+                    <span class="required">Password</span>
+                    @Html.ValidationMessageFor(x => x.Password)
+                </label>
+            </div>
+            <div>
+                <label class="label-confirm-password">
+                    @Html.TextBoxFor(m => m.ConfirmPassword)
+                    <span class="required">Confirm Password</span>
+                    @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                </label>
+            </div>
+            <div>
+                <label class="label-phone">
+                    @Html.TextBoxFor(m => m.Phone)
+                    <span class="required">Phone</span>
+                    @Html.ValidationMessageFor(x => x.Phone)
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="IsAdmin" value="true">
+                    Is Admin
+                </label>
+
+            </div>
+            <div>
+                <label class="label-success">@ViewBag.DuplicateMessage</label>
+
+            </div>
+
+
+            <input type="submit" value="Sign Up" />
+
+            <figure aria-hidden="true">
+                <div class="person-body"></div>
+                <div class="neck skin"></div>
+                <div class="head skin">
+                    <div class="eyes"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="hair"></div>
+                <div class="ears"></div>
+                <div class="shirt-1"></div>
+                <div class="shirt-2"></div>
+            </figure>
+        }
+    </div>
+</body>
+</html>

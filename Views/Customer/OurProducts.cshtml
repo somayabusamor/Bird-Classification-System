@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PROJECT_2024.Models.Product>
+
+@{
+    ViewBag.Title = "OurProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/style/OurProducts.css" rel="stylesheet" />
+<div class="product-container">
+
+    @foreach (var product in Model)
+    {
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="file:///C:/Users/ssoma/OneDrive/Pictures/Screenshots/@product.Image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.PName</h5>
+                        <p class="card-text">Quantity: @product.Quantity</p>
+                        <p class="card-text">Price: $@product.Price</p>
+                        <a href="@Url.Action("AddToCart", "Home", new { productId = product.PId })" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+

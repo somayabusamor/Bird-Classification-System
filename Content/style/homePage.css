@@ -1,0 +1,90 @@
+﻿/* Navbar styles */
+body {
+    background: #272727;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+    .navMenu a {
+        color: #f6f4e6;
+        text-decoration: none;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0 20px;
+        position: relative;
+    }
+
+        .navMenu a:hover {
+            color: #fddb3a;
+        }
+
+.dots {
+    display: flex;
+    position: absolute;
+    bottom: -10px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #fddb3a;
+    border-radius: 50%;
+    opacity: 0;
+    margin: 0 10px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.navMenu a:hover ~ .dots .dot {
+    opacity: 1;
+}
+
+/* Action boxes styles */
+/* Action boxes container styles */
+.actionBoxesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); /* Adjust height based on navbar height and margin */
+}
+
+/* Action boxes styles */
+.actionBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px; /* Adjust maximum width of the container */
+}
+
+.actionBox {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px 20px; /* Add margin to the bottom of each box */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+    .actionBox:hover {
+        transform: translateY(-5px);
+    }
+
+    .actionBox h3 {
+        font-size: 1.5em;
+        color: #272727;
+        margin-bottom: 10px;
+    }
+
+    .actionBox p {
+        font-size: 1.1em;
+        color: #666;
+    }
+

@@ -1,0 +1,75 @@
+﻿@model PROJECT_2024.Models.Product
+
+@{
+    ViewBag.Title = "DetailsProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailsProduct</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeLemt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeLemt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelasDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelasDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PId }) |
+    @Html.ActionLink("Back to List", "Showhomepage")
+</p>

@@ -1,0 +1,88 @@
+﻿@model PROJECT_2024.Models.Product
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enter Product</title>
+    <link href="~/Content/style/EnterProduct.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="text">Add New Product</div>
+            @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off", role = "main" }))
+            {
+                <div class="form-row">
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.PId)
+                        @Html.ValidationMessageFor(x => x.PId)
+                        <div class="underline"></div>
+                        <label>Product ID</label>
+                    </div>
+
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.PName)
+                        @Html.ValidationMessageFor(x => x.PName)
+                        <div class="underline"></div>
+                        <label>Product Name</label>
+                    </div>
+                    
+
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.Category)
+                        @Html.ValidationMessageFor(x => x.Category)
+                        <div class="underline"></div>
+                        <label>Category</label>
+                    </div>
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.Price)
+                        @Html.ValidationMessageFor(x => x.Price)
+                        <div class="underline"></div>
+                        <label>Price</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.RelasDate, new { type = "date" })
+                        @Html.ValidationMessageFor(x => x.RelasDate)
+                        <div class="underline"></div>
+                        <label>Release Date</label>
+                    </div>
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.AgeLemt)
+                        @Html.ValidationMessageFor(x => x.AgeLemt)
+                        <div class="underline"></div>
+                        <label>Age Limitation</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                        @Html.TextBoxFor(m => m.Quantity)
+                        @Html.ValidationMessageFor(x => x.Quantity)
+                        <div class="underline"></div>
+                        <label>Quantity</label>
+                    </div>
+                    <div>
+                        <div class="underline"></div>
+                        @Html.TextBoxFor(m => m.Image)
+                        <label>Image Source</label>
+                        <input type="file" name="ImageFile" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row submit-btn">
+                        <div class="input-data">
+                            <div class="inner"></div>
+                            <input id="Submit1" type="submit" value="Add Product">
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

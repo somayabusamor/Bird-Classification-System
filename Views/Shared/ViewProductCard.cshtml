@@ -1,0 +1,30 @@
+﻿@model PROJECT_2024.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product</title>
+    <link href="~/Content/style/ForView.css" rel="stylesheet" />
+    <div class="container">
+        <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+                <p>@Model.PName</p>
+                <hr>
+            </div>
+            <div class="items price">
+                <p class="old">$@Model.Price</p>
+                <p class="new">$@Model.Price</p>
+            </div>
+            <div class="items cart">
+                <i class="fa fa-shopping-cart"></i>
+                <span>ADD TO CART</span>
+            </div>
+        </div>
+    </div>
+</head>
+</html>

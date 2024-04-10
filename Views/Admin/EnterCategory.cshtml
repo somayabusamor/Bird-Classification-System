@@ -1,0 +1,43 @@
+﻿@model PROJECT_2024.Models.Category
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterCategory</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/style/EnterCategory.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="text">Add New Category</div>
+        @using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post, new { autocomplete = "off", role = "main" }))
+        {
+            <div class="form-row">
+                <div class="input-data">
+                    @Html.TextBoxFor(m => m.CategoryID)
+                    @Html.ValidationMessageFor(x => x.CategoryID)
+                    <div class="underline"></div>
+                    <label>Category ID</label>
+                </div>
+                <div class="input-data">
+                    @Html.TextBoxFor(m => m.CategoryName)
+                    @Html.ValidationMessageFor(x => x.CategoryName)
+                    <div class="underline"></div>
+                    <label>Category Name</label>
+                </div>
+                
+            </div>
+
+            <div class="form-row submit-btn">
+                <div class="input-data">
+                    <div class="inner"></div>
+                    <input id="Submit1" type="submit" value="Add Category">
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

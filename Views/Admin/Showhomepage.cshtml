@@ -1,0 +1,38 @@
+﻿<link href="~/Content/style/homePage.css" rel="stylesheet" />
+<body>
+    <nav class="navMenu">
+        <a href="Showhomepage">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Search</a>
+        <a href="LogIn">LogIn</a>
+        <a href="SignUp">Regester</a>
+        <div class="dot"></div>
+    </nav>
+    <div class="actionBoxesContainer">
+        <div class="actionBoxes">
+            <div class="actionBox" onclick="window.location.href='@Url.Action("ProductsList", "Admin")'">
+                <h3>Show Products List</h3>
+                <p>Click here to view the list of products.</p>
+            </div>
+            <div class="actionBox" onclick="window.location.href='@Url.Action("CategorysList", "Admin")'">
+                <h3>Show Categories List</h3>
+                <p>Click here to view the list of categories.</p>
+            </div>
+            <div class="actionBox" onclick="window.location.href='@Url.Action("CustomersList", "Admin")'">
+                <h3>Show Customer List</h3>
+                <p>Click here to view the list of customers.</p>
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong style="color: white;">Success:</strong> @ViewBag.SuccessMessage
+        </div>
+    }
+
+
+</body>
