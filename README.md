@@ -1,7 +1,7 @@
 # Bird Classification System 
 
 A backend system built with C# for searching and classifying bird species.  
-Developed as part of the Tekshoret (Communication Systems) course project.  
+Developed as part of the Bdekot (Communication Systems) course project.  
 
 ## Features
 - Bird data storage and classification
